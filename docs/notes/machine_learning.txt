@@ -1,0 +1,10 @@
+Machine Learning:
+ - method of data analysis
+ - automates analytical model building
+ - branch of artificial intelligence
+ - identify patterns and make decisions with minimal human intervention
+
+Model and Testing:
+ - in machine learning, we create a model and try to predict the test data
+ - training data -> used to fit the model
+ - testing data  -> used to test the model
