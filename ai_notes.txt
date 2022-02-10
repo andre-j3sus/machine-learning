@@ -1,0 +1,65 @@
+AI For Everyone -> https://www.deeplearning.ai/program/ai-for-everyone/
+
+AI (Artificial Intelligence) 
+ -> ANI (Artificial Narrow Intelligence) - AIs thath do one thing
+ -> AGI (Artificial General Intelligence) - do anything or more than a human can do
+
+What is AI?
+ - Machine Learning
+ - Data
+ - What makes an AI company
+ - What machine learning can and cannot do
+ - Deep Learning (Neural Networks)
+
+
+Machine Learning
+ - Input to Output
+ - More Data -> More Perfomance
+ - Supervised learning
+ - Running AI system
+ - Field of study that gives computers the ability to learn
+ without being explicitly programmed
+ 
+ 
+Data Science
+ - Uses AI tools and interacts with it
+ - Analyze data
+ - Output is a set of insights that can help make descisions
+ - Scienc of extracting knowledge and insights from data
+
+
+Deep Learning
+ - (Artificial) Neural Network
+ - Input -> Neurons -> Output
+ - Big mathematical equation
+ - Machine learning tool
+
+
+Data
+ - Table of data (dataset)
+ - Acquiring data:
+	- Manual labeling
+	- Observing behaviors
+	- Download from websites / partnerships
+ - Data problems
+	- Incorect lables
+	- Missing values
+ - Multiple types of data
+	- structured data -> datasets / tables
+	- unstructured data -> text, audio, videos
+	
+---
+
+AI Projects
+
+Steps of a machine learning project:
+ 1. Collect date
+ 2. Train Model (iterate many times until good enough)
+ 3. Deploy model (get data back, maintain and update model)
+
+Workflow of a data science project:
+ 1. Collect data
+ 2. Analyze data (iterate many times to get good insights)
+ 3. Suggest hypotheses/actions (deploy changes; re-analyzse new data)
+ 
+ 
