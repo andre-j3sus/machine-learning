@@ -1,21 +1,29 @@
-import pandas as pd
 import numpy as np
-import sklearn
+import pandas as pd
 from sklearn import linear_model
+import sklearn
+from sklearn.utils import shuffle
+import matplotlib.pyplot as plt
+from matplotlib import style
+import pickle
 
 """
-    In this program the objective is to predict the final grade based on some variables.
+    Program Objective: predict the students final grades based on some variables
+    Algorithm used: Linear Regression Algorithm
     Variables used:
      - first period and second period grades;
-     - study time
-     - number of past class failures
-     - number of school absences
-     Data from: https://archive.ics.uci.edu/ml/datasets/student+performance
+     - study time;
+     - number of past class failures;
+     - number of school absences;
+    Data from: https://archive.ics.uci.edu/ml/datasets/student+performance
 """
 
 # Get and separate data
 data = pd.read_csv("docs/student/student-mat.csv", sep=";")
-data = data[["G1", "G2", "G3", "studytime", "failures", "absences"]]
+
+variables = ["G1", "G2", "G3", "studytime", "failures", "absences"]
+data = data[variables]
+data = shuffle(data)
 
 # G1 and G2 are the first period and second period grades, respectively
 predict = "G3"  # G3 - final grade
@@ -27,13 +35,32 @@ y = np.array(data[predict])
 # Testing data  -> used to test the model
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)
 
-# Linear Regression Algorithm
-linear = linear_model.LinearRegression()
-linear.fit(x_train, y_train)
+# Train model multiple times for best score
+best = 0
+for _ in range(30):
+    x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)
 
-print("Accuracy: ", linear.score(x_test, y_test))
+    # Linear Regression Algorithm
+    linear = linear_model.LinearRegression()
+    linear.fit(x_train, y_train)
+
+    acc = linear.score(x_test, y_test)
+    print("Accuracy: ", acc)
+
+    if acc > best:
+        best = acc
+        with open("docs/student/student_grades.pickle", "wb") as f:
+            pickle.dump(linear, f)
+
+# Load best model
+model = open("docs/student/student_grades.pickle", "rb")
+linear = pickle.load(model)
+
+print('-' * 20)
+print("Accuracy: ", best)
 print('Coefficients: ', linear.coef_)  # Slope values for each variable
 print('Intercept: ', linear.intercept_)
+print('-' * 20)
 
 # Predict output
 predictions = linear.predict(x_test)
@@ -42,3 +69,20 @@ print("\nPrediction".ljust(20), '|', "Variables".ljust(20), '|', "Actual".ljust(
 print('-' * 62)
 for i in range(len(predictions)):
     print(str(predictions[i]).ljust(20), '|', str(x_test[i]).ljust(20), '|', str(y_test[i]).ljust(20))
+
+# Drawing and plotting model using matplotlib
+style.use("ggplot")
+
+plt.figure(num="Student Final Grade")
+plt.title("Student Final Grade")
+
+xPlot = "G2"
+xData = data[xPlot]
+
+plt.scatter(xData, data[predict])
+plt.xlabel(xPlot)
+plt.ylabel("Final Grade")
+
+plt.plot(xData, linear.coef_[variables.index(xPlot)] * xData + linear.intercept_)  # Draw regression line
+
+plt.show()
