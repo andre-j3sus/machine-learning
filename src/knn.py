@@ -1,9 +1,7 @@
 import sklearn
-from matplotlib.colors import ListedColormap
 from sklearn.neighbors import KNeighborsClassifier
 import pandas as pd
 from sklearn import preprocessing
-import matplotlib.pyplot as plt
 
 """
     Program Objective: Classify each car

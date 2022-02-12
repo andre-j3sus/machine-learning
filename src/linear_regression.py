@@ -71,7 +71,11 @@ predictions = linear.predict(x_test)
 print("\nPrediction".ljust(20), '|', "Variables".ljust(20), '|', "Actual".ljust(20))
 print('-' * 62)
 for i in range(len(predictions)):
-    print(str(predictions[i]).ljust(20), '|', str(x_test[i]).ljust(20), '|', str(y_test[i]).ljust(20))
+    print(
+        str(predictions[i]).ljust(20), '|',
+        str(x_test[i]).ljust(20), '|',
+        str(y_test[i]).ljust(20)
+    )
 
 # Drawing and plotting model using matplotlib
 style.use("ggplot")

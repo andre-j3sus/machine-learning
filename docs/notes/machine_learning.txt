@@ -40,3 +40,26 @@ K-Nearest Neighbors (KNN):
  - computationally heavy: requires the entire data set to make a prediction
  - high memory usage: requires that the entire data set be loaded into memory to perform a prediction
  - K must be an odd number to prevent draws
+
+
+Support Vector Machines (SVM):
+ - powerful tool that is a good choice for classifying
+ complicated data with a high degree of dimensions(features)
+ - allow for us to classify data that does not have a linear correspondence
+ - divides data into multiple classes using something called a hyper-plane:
+     - hyper plane is a fancy word for something that is straight that can divide data points
+     (in 2D is a line, in 3D is a plane, in any space higher than 3D it is simply called hyper-plane)
+     - to create a hyper plane we need to pick two points known as the support vectors; their distance
+     to the plane must be identical, and they need to be the closest points to the hyper-plane
+     - we choose the hyper-plane with the greatest possible margin (distance between points and plane)
+ - Kernels provide a way for us to create a hyper-plane for "unorganized" data,
+ bring it up to a higher dimension (in this case from 2D->3D)
+ - Popular kernels:
+    - Linear
+    - Polynomial
+    - Circular
+    - Hyperbolic Tangent (Sigmoid)
+ - Types of margin:
+     - Hard margin: no points may exist inside the margin
+     - Soft margin: outliers may exist inside the margin
+        - hyper-parameter is the amount of points allowed to exist inside the margin
