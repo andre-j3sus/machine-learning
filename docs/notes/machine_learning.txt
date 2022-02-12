@@ -4,7 +4,39 @@ Machine Learning:
  - branch of artificial intelligence
  - identify patterns and make decisions with minimal human intervention
 
+Some algorithms:
+ - Linear Regression
+ - Logistic Regression
+ - Decision Tree
+ - K-Nearest Neighbors
+ - Support Vector Machine
+ - Naive Bayes Algorithm
+ - K-Means
+ - Random Forest Algorithm
+
+
 Model and Testing:
  - in machine learning, we create a model and try to predict the test data
  - training data -> used to fit the model
  - testing data  -> used to test the model
+
+
+Linear Regression Algorithm:
+ - model the relationship between two variables
+ by fitting a linear equation to observed data
+ - linear regression line equation: y = a + bx:
+    - x: explanatory variable
+    - y: dependent variable
+    - a: slope of the line (how much the y value increases for each x value)
+    - b: intercept (the value of y when x = 0)
+
+
+K-Nearest Neighbors (KNN):
+ - used for classifying data (in small data sets)
+ - classify data into certain categories
+ - works by looking at the K-closest points to the given data point
+ (the one we want to classify) and picking the class that occurs the
+ most to be the predicted value
+ - computationally heavy: requires the entire data set to make a prediction
+ - high memory usage: requires that the entire data set be loaded into memory to perform a prediction
+ - K must be an odd number to prevent draws

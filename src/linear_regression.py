@@ -8,18 +8,21 @@ from matplotlib import style
 import pickle
 
 """
-    Program Objective: predict the students final grades based on some variables
-    Algorithm used: Linear Regression Algorithm
-    Variables used:
-     - first period and second period grades;
-     - study time;
-     - number of past class failures;
-     - number of school absences;
-    Data from: https://archive.ics.uci.edu/ml/datasets/student+performance
+    Program Objective: Predict the students final grades based on some variables
+    Algorithm: Linear Regression Algorithm
+    Variables:
+     - G1:          first period grade (numeric: from 0 to 20)
+     - G2:          second period grade (numeric: from 0 to 20)
+     - studytime:   weekly study time (numeric: 1 - <2 hours, 2 - 2 to 5 hours, 
+                    3 - 5 to 10 hours, or 4 - >10 hours)
+     - failures:    number of past class failures (numeric: n if 1<=n<3, else 4)
+     - absences:    number of school absences (numeric: from 0 to 93)
+    Predict: G3 - final grade (numeric: from 0 to 20, output target)
+    Data: https://archive.ics.uci.edu/ml/datasets/student+performance
 """
 
 # Get and separate data
-data = pd.read_csv("docs/student/student-mat.csv", sep=";")
+data = pd.read_csv("../docs/student/student-mat.csv", sep=";")
 
 variables = ["G1", "G2", "G3", "studytime", "failures", "absences"]
 data = data[variables]
@@ -49,11 +52,11 @@ for _ in range(30):
 
     if acc > best:
         best = acc
-        with open("docs/student/student_grades.pickle", "wb") as f:
+        with open("../docs/student/student_grades.pickle", "wb") as f:
             pickle.dump(linear, f)
 
 # Load best model
-model = open("docs/student/student_grades.pickle", "rb")
+model = open("../docs/student/student_grades.pickle", "rb")
 linear = pickle.load(model)
 
 print('-' * 20)
