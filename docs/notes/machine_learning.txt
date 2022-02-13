@@ -63,3 +63,22 @@ Support Vector Machines (SVM):
      - Hard margin: no points may exist inside the margin
      - Soft margin: outliers may exist inside the margin
         - hyper-parameter is the amount of points allowed to exist inside the margin
+
+
+K-Means Clustering:
+ - unsupervised learning algorithm
+ - attempts to divide our training data into k unique clusters to classify information
+ - does not require labels for given test data
+ - It is responsible for learning the differences between our data points and determine what
+ features determining what class
+
+
+
+
+
+
+
+
+
+
+
