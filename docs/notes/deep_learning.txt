@@ -1,0 +1,51 @@
+# Deep Learning
+
+ReLU function:
+- Rectified Linear Unit
+- Function used in deep learning problems
+
+Types of Neural Networks:
+- Standard NN
+- Convolution Neural Network (CNN) - image apps
+- Recurrent Neural Network (RNN) - sequence data (like audio, or language apps)
+- Hybrid Neural Network - complex NN
+
+Structured Data: each of the features has a very well-defined meaning (tables, etc)
+Unstructured Data: audio, images, text, etc
+
+Scale drives deep learning progress: with a long NN, with more labeled data, we have more performance
+
+
+Binary Classification refers to those classification tasks that have two class labels
+
+Notation:
+
+n: number of input values
+m: number of training examples
+(x, y): training example
+M = Mtrain
+Mtest = number of test examples
+X: matrix with training input vales; m columns x n lines
+Y: matrix with training output vales; m columns x 1 line
+
+
+Logistic Regression:
+- output labels are 0 or 1
+- Given x, we want y^;  y^ = P(y=1 | x)
+- Parameters:
+        w: nx dimensional vector
+        b: real number
+- Output: 0 <= y^ <= 1;  y^ = σ(wx + b) -> sigmoid function of the linear regression
+        wx + b = z -> y^ = σ(z) = 1 / (1 + e^(-z)):
+        if z is large, y^ is approximated 1
+        if z is large negative number, y^ is approximated 0
+- Cost function: J(w, b) = 1/m * mΣ(i=1) (L(y^^i, y^i))
+- z^i = w^T x^i + b; where i means the i-th training example
+- we want y^^i to be approximated to y^i
+- Loss (error) function: L(y^, y) = -(y log(y^) + (1-y)log(1-y^))
+
+Gradient Descent Algorithm:
+- to train/learn logistic regression parameters
+- we want to find w, b that minimize J(w, b)
+- w := w - α * dw
+- b := b - α * db   NOTE: ":=" means "update"
