@@ -71,14 +71,3 @@ K-Means Clustering:
  - does not require labels for given test data
  - It is responsible for learning the differences between our data points and determine what
  features determining what class
-
-
-
-
-
-
-
-
-
-
-

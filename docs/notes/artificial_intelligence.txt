@@ -62,4 +62,3 @@ Workflow of a data science project:
  2. Analyze data (iterate many times to get good insights)
  3. Suggest hypotheses/actions (deploy changes; re-analyzse new data)
  
- 

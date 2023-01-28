@@ -1,21 +1,3 @@
-# Deep Learning
-
-ReLU function:
-- Rectified Linear Unit
-- Function used in deep learning problems
-
-Types of Neural Networks:
-- Standard NN
-- Convolution Neural Network (CNN) - image apps
-- Recurrent Neural Network (RNN) - sequence data (like audio, or language apps)
-- Hybrid Neural Network - complex NN
-
-Structured Data: each of the features has a very well-defined meaning (tables, etc)
-Unstructured Data: audio, images, text, etc
-
-Scale drives deep learning progress: with a long NN, with more labeled data, we have more performance
-
-
 Binary Classification refers to those classification tasks that have two class labels
 
 Notation:
